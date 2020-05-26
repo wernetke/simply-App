@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
+    <link rel="stylesheet" href="simplyApp_Style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
 </head>
+
 <body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<div id="centered">
+    <h1 display="hidden" id="errorMessage"></h1>
 
-<h1 display="hidden" style="color:red;font-size: 18px;"></h1>
+    <div id="login">
 
-<form>
-    <label for="username">Username</label>
-    <input id="username"></br>
-    <label for="password">Password</label>
-    <input id="password"></br>
-    <button type="button" onclick="getInfo()">Submit</button>
-</form>
-<script src="js/main.js"></script>
+        <form>
+            <label for="username">User</label>
+            <input id="username">
+            <label for="password">Password</label>
+            <input id="password">
+            <div class="buttonStyle" align="center">
+                <button type="button" onclick="getInfo()">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div id="logged" style="display:none;">
+        <h2 id="label"></h2>
+        <input id="groupId" type="hidden">
+        <div class="buttonStyle" align="center">
+            <button type="button" onclick="callNext()">NEXT</button>
+        </div>
+    </div>
+</div>
 </body>
+
+<script src="js/main.js"></script>
+<script>
+    checkUser();
+</script>
 </html>
