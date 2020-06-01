@@ -60,7 +60,7 @@ function callNext() {
 
     let url = Url + groupId + "/next";
     const myHeaders = new Headers();
-    myHeaders.append("SeetrusAuthenticationToken", "uu58354A40FCB94759AC8FE0148A8DF116544ADBEF503441B5891914F6677C844A");
+    myHeaders.append("SeetrusAuthenticationToken", localStorage.getItem('token'));
     //create the header
     const requestOptions = {
         method: 'GET',
